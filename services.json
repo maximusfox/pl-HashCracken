@@ -1,0 +1,147 @@
+[
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "md5online.net",
+		"request": {
+			"method": "POST",
+			"uri": "http://md5online.net/",
+			"data": {
+				"pass": "{HASH}",
+				"option": "hash2text",
+				"send": "Submit"
+			}
+		},
+		
+		"responsRegexp": "<br>pass : <b>(.+?)</b></p></table>"
+	},
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "md5pass.info",
+		"request": {
+			"method": "POST",
+			"uri": "http://md5pass.info/",
+			"data": {
+				"hash": "{HASH}",
+				"get_pass": "Get Pass"
+			}
+		},
+		
+		"responsRegexp": "Password - <b>(.+?)</b> "
+	},
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "md5crack.com",
+		"request": {
+			"method": "GET",
+			"uri": "http://api.md5crack.com/crack/7c10830ef3a407891050143c/{HASH}",
+			"data": {}
+		},
+		
+		"responsRegexp": "\"parsed\":\"(.+?)\""
+	},
+
+	{
+		"hashType": "sha1",
+		"inputFilter": "^[a-z0-9]{40}$",
+
+		"service": "stringfunction.com",
+		"request": {
+			"method": "POST",
+			"uri": "http://www.stringfunction.com/sha1-decrypter.html",
+			"data": {
+				"string": "{HASH}",
+				"submit": "Decrypt",
+				"result": ""
+			}
+		},
+		
+		"responsRegexp": "rows=\"10\" cols=\"50\" name=\"result\">(.+?)</textarea>"
+	},
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "stringfunction.com",
+		"request": {
+			"method": "POST",
+			"uri": "http://www.stringfunction.com/md5-decrypter.html",
+			"data": {
+				"string_md5": "{HASH}",
+				"submit": "Decrypt",
+				"result": "",
+				"string": ""
+			}
+		},
+		
+		"responsRegexp": "id=\"textarea_md5_decrypter\">(.+?)</textarea>"
+	},
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "md5decryption.com",
+		"request": {
+			"method": "POST",
+			"uri": "http://md5decryption.com/",
+			"data": {
+				"hash": "{HASH}",
+				"submit": "Decrypt It!"
+			}
+		},
+		
+		"responsRegexp": "Decrypted Text: </b>(.+?)</font><br/><center>"
+	},
+
+	{
+		"hashType": "sha1",
+		"inputFilter": "^[a-z0-9]{40}$",
+
+		"service": "md5.rednoize.com",
+		"request": {
+			"method": "GET",
+			"uri": "http://md5.rednoize.com/?p&s=sha1&q={HASH}&_=",
+			"data": {}
+		},
+		
+		"responsRegexp": "\"(.+?)\"\n.+$"
+	},
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "md5.rednoize.com",
+		"request": {
+			"method": "GET",
+			"uri": "http://md5.rednoize.com/?p&s=md5&q={HASH}&_=",
+			"data": {}
+		},
+		
+		"responsRegexp": "\"(.+?)\"\n.+$"
+	},
+
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "md5.gromweb.com",
+		"request": {
+			"method": "GET",
+			"uri": "http://md5.gromweb.com/?md5={HASH}",
+			"data": {}
+		},
+		
+		"responsRegexp": "type=\"search\" name=\"string\" value=\"(.+?)\" id=\"form_string\" maxlength=\"255\" size=\"40\""
+	}
+]
