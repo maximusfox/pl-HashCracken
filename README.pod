@@ -1,0 +1,86 @@
+=encoding utf8
+
+=head1 pl-HashCracken
+
+Perl script to ckrack hashes in online database
+
+
+=head2 Install dependence
+
+	cpanm  --installdeps .
+
+=head2 Edit config.json
+
+	{
+		"threads": 10, // number of asynchronous requests
+
+		// Input and Output files
+		"input": "input.txt", // Hash list
+		"output": "output.txt" // Cracked hashes list. Like this "81dc9bdb52d04dc20036dbd8313ed055:1234	(md5)"
+	}
+
+
+=head2 Edit services.json
+
+	{
+		"hashType": "md5", // Hesh type
+		"inputFilter": "^[a-z0-9]{32}$", // Expression coincides with the hash
+
+		"service": "md5online.net", // Servise name
+		"request": {
+			"method": "POST", // Request method GET or POST
+			"uri": "http://md5online.net/", // Request url
+
+			// Post params
+			"data": {
+				"pass": "{HASH}",
+				"option": "hash2text",
+				"send": "Submit"
+			}
+
+			// If use get request, section date must be equal to {}
+			// In params and url text {HASH} is replaced by your hash 
+		},
+		
+		// Regexp to parsing respons
+		"responsRegexp": "<br>pass : <b>(.+?)</b></p></table>"
+	},
+
+=head2 Start script
+
+	git clone git@github.com:maximusfox/pl-HashCracken.git
+	cd pl-HashCracken
+	cpanm  --installdeps .
+	chmod +x start.pl
+	./start.pl
+	or './start.pl off' if you want to suppress information about author and etc.
+
+=head2 Working output
+
+	[fox@BuldoserX4 pl-HashCracken]$ ./start.pl 
+	# HashCracken v0.1
+	# Author: SHok
+	# GitHub.com https://github.com/maximusfox/pl-HashCracken
+	# Jabber: avchecking@cryptovpn.com
+
+	[-] Service[md5online.net (md5) ]	8ed36a8485e30937b99c0d247e9c3832
+	[+] Service[md5online.net (md5) ]	81dc9bdb52d04dc20036dbd8313ed055:1234
+	[-] Service[md5pass.info (md5) ]	8ed36a8485e30937b99c0d247e9c3832
+	[-] Service[md5online.net (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
+	[-] Service[md5pass.info (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
+	[+] Service[md5crack.com (md5) ]	8ed36a8485e30937b99c0d247e9c3832:3390
+	[-] Service[md5crack.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
+	[+] Service[stringfunction.com (sha1) ]	5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8:password
+	[+] Service[stringfunction.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0:salo
+
+
+	[fox@BuldoserX4 pl-HashCracken]$ ./start.pl off
+	[+] Service[md5online.net (md5) ]	81dc9bdb52d04dc20036dbd8313ed055:1234
+	[-] Service[md5online.net (md5) ]	8ed36a8485e30937b99c0d247e9c3832
+	[-] Service[md5online.net (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
+	[-] Service[md5pass.info (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
+	[-] Service[md5pass.info (md5) ]	8ed36a8485e30937b99c0d247e9c3832
+	[-] Service[md5crack.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
+	[+] Service[md5crack.com (md5) ]	8ed36a8485e30937b99c0d247e9c3832:3390
+	[+] Service[stringfunction.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0:salo
+	[+] Service[stringfunction.com (sha1) ]	5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8:password
