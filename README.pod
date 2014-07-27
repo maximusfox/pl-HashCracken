@@ -89,15 +89,3 @@ Perl script to ckrack hashes in online database
 	[-] Service[md5crack.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
 	[+] Service[stringfunction.com (sha1) ]	5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8:password
 	[+] Service[stringfunction.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0:salo
-
-
-	[fox@BuldoserX4 pl-HashCracken]$ ./start.pl off
-	[+] Service[md5online.net (md5) ]	81dc9bdb52d04dc20036dbd8313ed055:1234
-	[-] Service[md5online.net (md5) ]	8ed36a8485e30937b99c0d247e9c3832
-	[-] Service[md5online.net (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
-	[-] Service[md5pass.info (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
-	[-] Service[md5pass.info (md5) ]	8ed36a8485e30937b99c0d247e9c3832
-	[-] Service[md5crack.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0
-	[+] Service[md5crack.com (md5) ]	8ed36a8485e30937b99c0d247e9c3832:3390
-	[+] Service[stringfunction.com (md5) ]	25b1902406e1629d19f07bba8b2f0cf0:salo
-	[+] Service[stringfunction.com (sha1) ]	5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8:password
