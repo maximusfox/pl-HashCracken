@@ -18,6 +18,8 @@ use LWP::UserAgent;
 use constant DEBUG => 0;
 use constant DEBUGWWW => 0;
 
+HeaderInfo() unless ($ARGV[0]);
+
 # Read config
 my $config;
 eval { $config = decode_json(read_file('config.json')); };
@@ -71,7 +73,7 @@ for (1..$config->{threads}) {
 						append_file( $config->{output}, $hash.':'.$password."\t(".$service->{hashType}.")\n" ) ;
 						last;
 					} else {
-						say '[-] Service['.$service->{service}.' ('.$service->{hashType}.') ]'."\t".$hash  if (DEBUGWWW);
+						say '[-] Service['.$service->{service}.' ('.$service->{hashType}.') ]'."\t".$hash;# if (DEBUGWWW);
 						say 'DBG:'."\n".$result->as_string."\n" if (DEBUG);
 					}
 
@@ -88,7 +90,7 @@ for (1..$config->{threads}) {
 						append_file( $config->{output}, $hash.':'.$password."\t(".$service->{hashType}.")\n" ) ;
 						last;
 					} else {
-						say '[-] Service['.$service->{service}.' ('.$service->{hashType}.') ]'."\t".$hash  if (DEBUGWWW);
+						say '[-] Service['.$service->{service}.' ('.$service->{hashType}.') ]'."\t".$hash;# if (DEBUGWWW);
 						say 'DBG:'."\n".$result->as_string."\n" if (DEBUG);
 					}
 
@@ -104,3 +106,14 @@ for (1..$config->{threads}) {
 $_->join for (@coros);
 
 close(INPUT);
+
+
+sub HeaderInfo {
+	print <<EOF;
+# HashCracken v0.1
+# Author: SHok
+# GitHub.com https://github.com/maximusfox/pl-HashCracken
+# Jabber: avchecking\@cryptovpn.com
+
+EOF
+}
