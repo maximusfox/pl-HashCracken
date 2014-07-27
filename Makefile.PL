@@ -15,6 +15,6 @@ WriteMakefile(
     'Coro::Select' => 6.33,
     'File::Slurp' => 9999.19,
     'LWP::UserAgent' => 6.05,
-    # 'Term::ANSIColor' => 0,
+    'Term::ANSIColor' => 0,
   }
 );
