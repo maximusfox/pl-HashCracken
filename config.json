@@ -1,5 +1,6 @@
 {
 	"threads": 10,
 	"input": "input.txt",
-	"output": "output.txt"
+	"outputGood": "outputGood.txt",
+	"outputBad": "outputBad.txt"
 }
