@@ -16,5 +16,6 @@ WriteMakefile(
     'File::Slurp' => 9999.19,
     'LWP::UserAgent' => 6.05,
     'Term::ANSIColor' => 0,
+    'Getopt::Args' => 0,
   }
 );
