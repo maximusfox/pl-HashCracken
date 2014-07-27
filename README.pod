@@ -52,8 +52,25 @@ Perl script to ckrack hashes in online database
 	cd pl-HashCracken
 	sudo cpanm  --installdeps .
 	chmod +x start.pl
-	./start.pl
-	or './start.pl off' if you want to suppress information about author and etc.
+	./start.pl [OPTIONS]
+
+=head2 Usage
+
+	usage: start.pl [OPTIONS...]
+
+	  Options:
+	    --help,       -h    Show help message
+	    --header,     -hd   Show or not header information [on|off] (default on)
+	    --in,         -i    Input file (default input.txt)
+	    --good,       -g    Good output file (default good.txt)
+	    --bad,        -b    Bad output file (default bad.txt)
+	    --config,     -C    JSON config file (default config.json)
+	    --services,   -S    JSON services config file (default services.json)
+	    --threads,    -t    Number of asynchronous requests (default 10)
+	    --colored,    -c    Colored output
+	    --proxy,      -p    Use proxy (like this http://localhost:8888/), not use it with --debugProxy
+	    --debug,      -d    Set debug mod
+	    --debugProxy, -dp   Set charles debug proxy (http://localhost:8888/), not use it with --proxy
 
 =head2 Working output
 
