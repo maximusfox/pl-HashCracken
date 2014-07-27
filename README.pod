@@ -7,7 +7,7 @@ Perl script to ckrack hashes in online database
 
 =head2 Install dependence
 
-	cpanm  --installdeps .
+	sudo cpanm  --installdeps .
 
 =head2 Edit config.json
 
@@ -50,7 +50,7 @@ Perl script to ckrack hashes in online database
 
 	git clone git@github.com:maximusfox/pl-HashCracken.git
 	cd pl-HashCracken
-	cpanm  --installdeps .
+	sudo cpanm  --installdeps .
 	chmod +x start.pl
 	./start.pl
 	or './start.pl off' if you want to suppress information about author and etc.
