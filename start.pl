@@ -213,8 +213,9 @@ sub HeaderInfo {
 my $message = <<EOF;
 # HashCracken v0.1
 # Author: SHok
-# GitHub.com https://github.com/maximusfox/pl-HashCracken
 # Jabber: avchecking\@cryptovpn.com
+# Repo: https://github.com/maximusfox/pl-HashCracken
+# Issue: https://github.com/maximusfox/pl-HashCracken/issues
 
 EOF
 
