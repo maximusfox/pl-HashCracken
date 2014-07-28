@@ -15,9 +15,9 @@ Perl script to crack hashes in online database
 		"threads": 10, // number of asynchronous requests
 
 		// Input and Output files
+		"input": "input.txt", // Hash list
 		"outputGood": "outputGood.txt",  // Cracked hashes list like this "81dc9bdb52d04dc20036dbd8313ed055:1234	(md5)"
 		"outputBad": "outputBad.txt" // Not cracked hashes
-		"input": "input.txt", // Hash list
 	}
 
 
