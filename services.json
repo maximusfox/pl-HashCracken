@@ -1,4 +1,31 @@
 [
+	{
+		"hashType": "md5",
+		"inputFilter": "^[a-z0-9]{32}$",
+
+		"service": "hashtoolkit.com",
+		"request": {
+			"method": "GET",
+			"uri": "http://hashtoolkit.com/reverse-hash?hash={HASH}",
+			"data": {}
+		},
+		
+		"responsRegexp": "<td class=\"res-text\">\\n\\s+<span>(.+?)</span>"
+	},
+	
+	{
+		"hashType": "sha1",
+		"inputFilter": "^[a-z0-9]{40}$",
+
+		"service": "hashtoolkit.com",
+		"request": {
+			"method": "GET",
+			"uri": "http://hashtoolkit.com/reverse-hash?hash={HASH}",
+			"data": {}
+		},
+		
+		"responsRegexp": "<td class=\"res-text\">\\n\\s+<span>(.+?)</span>"
+	},
 
 	{
 		"hashType": "md5",
@@ -16,6 +43,40 @@
 		},
 		
 		"responsRegexp": "<br>pass : <b>(.+?)</b></p></table>"
+	},
+	
+	{
+	    "hashType": "md5",
+	    "inputFilter": "^[a-z0-9]{32}$",
+
+	    "service": "cloudcracker.net",
+	    "request": {
+	        "method": "POST",
+	        "uri": "http://www.cloudcracker.net/index.php",
+	        "data": {
+	            "inputbox": "{HASH}",
+	            "submit": "Crack MD5 Hash!"
+	        }
+	    },
+	    
+	    "responsRegexp": "onclick=\"this.select\\(\\)\" value=\"(.+?)\""
+	},
+
+	{
+	    "hashType": "sha1",
+	    "inputFilter": "^[a-z0-9]{40}$",
+
+	    "service": "cloudcracker.net",
+	    "request": {
+	        "method": "POST",
+	        "uri": "http://www.cloudcracker.net/index.php",
+	        "data": {
+	            "inputbox": "{HASH}",
+	            "submit": "Crack SHA1 Hash!"
+	        }
+	    },
+	    
+	    "responsRegexp": "onclick=\"this\\.select\\(\\)\" value=\"(.+?)\""
 	},
 
 	{
@@ -39,51 +100,28 @@
 		"hashType": "md5",
 		"inputFilter": "^[a-z0-9]{32}$",
 
-		"service": "md5crack.com",
+		"service": "md5cracker.com",
 		"request": {
 			"method": "GET",
-			"uri": "http://api.md5crack.com/crack/7c10830ef3a407891050143c/{HASH}",
+			"uri": "http://www.md5cracker.com/qkhash.php?option=json&pass={HASH}",
 			"data": {}
 		},
 		
-		"responsRegexp": "\"parsed\":\"(.+?)\""
-	},
-
-	{
-		"hashType": "sha1",
-		"inputFilter": "^[a-z0-9]{40}$",
-
-		"service": "stringfunction.com",
-		"request": {
-			"method": "POST",
-			"uri": "http://www.stringfunction.com/sha1-decrypter.html",
-			"data": {
-				"string": "{HASH}",
-				"submit": "Decrypt",
-				"result": ""
-			}
-		},
-		
-		"responsRegexp": "rows=\"10\" cols=\"50\" name=\"result\">(.+?)</textarea>"
+		"responsRegexp": "\"plaintext\":\"(.+?)\""
 	},
 
 	{
 		"hashType": "md5",
 		"inputFilter": "^[a-z0-9]{32}$",
 
-		"service": "stringfunction.com",
+		"service": "md5crack.com",
 		"request": {
-			"method": "POST",
-			"uri": "http://www.stringfunction.com/md5-decrypter.html",
-			"data": {
-				"string_md5": "{HASH}",
-				"submit": "Decrypt",
-				"result": "",
-				"string": ""
-			}
+			"method": "GET",
+			"uri": "http://api.md5crack.com/crack/52TOnUNVxNtFQtxa/{HASH}",
+			"data": {}
 		},
 		
-		"responsRegexp": "id=\"textarea_md5_decrypter\">(.+?)</textarea>"
+		"responsRegexp": "\"phrase\":\"(.+?)\""
 	},
 
 	{
@@ -101,34 +139,6 @@
 		},
 		
 		"responsRegexp": "Decrypted Text: </b>(.+?)</font><br/><center>"
-	},
-
-	{
-		"hashType": "sha1",
-		"inputFilter": "^[a-z0-9]{40}$",
-
-		"service": "md5.rednoize.com",
-		"request": {
-			"method": "GET",
-			"uri": "http://md5.rednoize.com/?p&s=sha1&q={HASH}&_=",
-			"data": {}
-		},
-		
-		"responsRegexp": "\"(.+?)\"\n.+$"
-	},
-
-	{
-		"hashType": "md5",
-		"inputFilter": "^[a-z0-9]{32}$",
-
-		"service": "md5.rednoize.com",
-		"request": {
-			"method": "GET",
-			"uri": "http://md5.rednoize.com/?p&s=md5&q={HASH}&_=",
-			"data": {}
-		},
-		
-		"responsRegexp": "\"(.+?)\"\n.+$"
 	},
 
 	{

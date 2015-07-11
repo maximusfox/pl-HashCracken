@@ -1,5 +1,5 @@
 {
-	"threads": 10,
+	"threads": 50,
 	"input": "input.txt",
 	"outputGood": "outputGood.txt",
 	"outputBad": "outputBad.txt"
