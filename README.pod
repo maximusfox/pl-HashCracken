@@ -78,7 +78,6 @@ Perl script to crack hashes in online database
 	[fox@BuldoserX4 pl-HashCracken]$ ./start.pl 
 	# HashCracken v0.1
 	# Author: SHok
-	# Jabber: avchecking@cryptovpn.com
 	# Repo: https://github.com/maximusfox/pl-HashCracken
 	# Issue: https://github.com/maximusfox/pl-HashCracken/issues
 
